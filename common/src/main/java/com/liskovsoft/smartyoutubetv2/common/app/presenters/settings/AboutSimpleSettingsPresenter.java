@@ -23,18 +23,9 @@ public class AboutSimpleSettingsPresenter extends BasePresenter<Void> {
                 AppInfoHelpers.getAppVersionName(getContext()));
 
         AppDialogPresenter settingsPresenter = AppDialogPresenter.instance(getContext());
+        // FreeTube: remove inherited update and bridge installation actions.
 
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        settingsPresenter.showDialog(mainTitle);
+settingsPresenter.showDialog(mainTitle);
     }
-
-
-
-
 
 }

@@ -35,18 +35,9 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
         AppDialogPresenter settingsPresenter = AppDialogPresenter.instance(getContext());
 
         String country = LocaleUtility.getCurrentLocale(getContext()).getCountry();
+        // FreeTube: remove inherited update and bridge installation actions.
 
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        // FreeTube: inherited updater/bridge UI removed.
-
-        if (!Helpers.equalsAny(country, "RU", "UA")) {
+if (!Helpers.equalsAny(country, "RU", "UA")) {
             appendDonation(settingsPresenter);
             appendFeedback(settingsPresenter);
             appendLinks(settingsPresenter);
@@ -55,12 +46,7 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
         settingsPresenter.showDialog(mainTitle);
     }
 
-
-
-
     private void appendLinks(AppDialogPresenter settingsPresenter) {
-        OptionItem releasesOption = UiOptionItem.from(getContext().getString(R.string.releases),
-                option -> Utils.openLink(getContext(), Utils.toQrCodeLink(getContext().getString(R.string.releases_url))));
 
         OptionItem sourcesOption = UiOptionItem.from(getContext().getString(R.string.sources),
                 option -> Utils.openLink(getContext(), Utils.toQrCodeLink(getContext().getString(R.string.sources_url))));
@@ -68,7 +54,6 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
         //OptionItem webSiteOption = UiOptionItem.from(getContext().getString(R.string.web_site),
         //        option -> Utils.openLink(getContext(), Utils.toQrCodeLink(getContext().getString(R.string.web_site_url))));
 
-        settingsPresenter.appendSingleButton(releasesOption);
         settingsPresenter.appendSingleButton(sourcesOption);
         //settingsPresenter.appendSingleButton(webSiteOption);
     }
@@ -105,7 +90,5 @@ public class AboutSettingsPresenter extends BasePresenter<Void> {
             settingsPresenter.appendStringsCategory(getContext().getString(R.string.feedback), feedbackOptions);
         }
     }
-
-
 
 }
